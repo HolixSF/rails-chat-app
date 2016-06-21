@@ -26,3 +26,8 @@ jquery(document).on 'turbolinks:load', ->
 				textarea.val('')
 			e.preventDefault()
 			return false
+
+
+
+
+			
