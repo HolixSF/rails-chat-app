@@ -1,9 +1,5 @@
 <h1><%= @chat_room.title %></h1>
 
-<div id="messages">
-	<%= render @chat_room.messages %>
-</div>
-
 <%= form_for @message, url: '#' do |f| %>
 	<div class="form-group">
 		<%= f.label :body %>

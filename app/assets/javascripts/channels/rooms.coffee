@@ -1,4 +1,4 @@
-jquery(document).on 'turbolinks:load', ->
+$(document).on 'turbolinks:load', ->
 	messages = $('#messages')
 	if $('#messages').length > 0
 		messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
@@ -10,29 +10,28 @@ jquery(document).on 'turbolinks:load', ->
 			chat_room_id: messages.data('chat-room-id')
 		},
 		connected: ->
-			// Called when the subscription is ready for use on the server
+			# Called when the subscription is ready for use on the server
 
 		disconnected: ->
-			// Called when the subscription has been terminated by the server
+			# Called when the subscription has been terminated by the server
 
 		received: (data) ->
-			// Data received
 			messages.append data['message']
 			messages_to_bottom()
 
 		send_message: (message, chat_room_id) ->
+			console.log(chat_room_id);
+			console.log(message);
 			@perform 'send_message', message: message, chat_room_id: chat_room_id
 
-		$('#new_message').submit(e) ->
+		$('#new_message').submit (e) ->
 			$this = $(this)
 			textarea = $this.find('#message_body')
 			if $.trim(textarea.val()).length > 1
-				App.global_chat.send_message textarea.val(), messages.data('chat_room_id')
+				console.log(messages.data('chatRoomId'));
+				App.global_chat.send_message textarea.val(), messages.data('chatRoomId')
 				textarea.val('')
 			e.preventDefault()
 			return false
-
-
-
 
 			

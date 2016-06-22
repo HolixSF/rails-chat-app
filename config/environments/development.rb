@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # ActionCable.server.config.allowed_request_origins = ['https://88aa2fa7.ngrok.io', 'http://88aa2fa7.ngrok.io']
+  ActionCable.server.config.disable_request_forgery_protection = true
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
