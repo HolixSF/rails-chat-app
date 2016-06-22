@@ -1,4 +1,4 @@
-$(document).on 'turbolinks:load', ->
+jQuery(document).on 'turbolinks:load', ->
 	messages = $('#messages')
 	if $('#messages').length > 0
 		messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
@@ -20,8 +20,6 @@ $(document).on 'turbolinks:load', ->
 			messages_to_bottom()
 
 		send_message: (message, chat_room_id) ->
-			console.log(chat_room_id);
-			console.log(message);
 			@perform 'send_message', message: message, chat_room_id: chat_room_id
 
 		$('#new_message').submit (e) ->
@@ -29,7 +27,7 @@ $(document).on 'turbolinks:load', ->
 			textarea = $this.find('#message_body')
 			if $.trim(textarea.val()).length > 1
 				console.log(messages.data('chatRoomId'));
-				App.global_chat.send_message textarea.val(), messages.data('chatRoomId')
+				App.global_chat.send_message textarea.val(), messages.data('chat-room-id')
 				textarea.val('')
 			e.preventDefault()
 			return false

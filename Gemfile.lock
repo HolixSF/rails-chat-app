@@ -182,7 +182,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (~> 4.1.1)
   listen (~> 3.0.5)
   pg
   puma (~> 3.0)
