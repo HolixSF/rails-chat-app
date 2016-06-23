@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
     <title>RailsChatApp</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -9,6 +14,13 @@
   </head>
 
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="header text-xs-center">
+          <h1>ACTION CHATS</h1>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

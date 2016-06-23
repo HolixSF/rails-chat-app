@@ -1,15 +1,9 @@
-<div class="card">
-  <div class="card-block">
-    <div class="row">
-      <div class="col-md-1">
-        <%= gravatar_for message.user %>
-      </div>
-      <div class="col-md-11">
-        <p class="card-text">
-          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
-          <%= message.body %>
-        </p>
-      </div>
+<li class="media">
+    <div class="media-left media-top">
+      <a href="#" class="pull-xs-left"><%= gravatar_for message.user %></a>
+    </div>  
+    <div class="media-body">
+      <p class="pull-xs-left"><%= message.body %></p>
+      <small class="text-muted pull-xs-right">Sent by: <%= message.user.name %> | <%= message.timestamp %></small>
     </div>
-  </div>
-</div>
+</li>
