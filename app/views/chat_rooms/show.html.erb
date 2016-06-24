@@ -25,16 +25,13 @@
       	<div class="col-md-4">
       		<div class="card">
       			<div class="card-header text-xs-center">
-      				<h3>ADD CHAT ROOM</h3>
+      				<h3>ONLINE USERS</h3>
       			</div>
-      			<div class="card-block text-xs-left">
-      				<%= form_for @chat_room, url: {controller: "chat_rooms", action: "create"} do |f| %>
-						<div class="form-group">
-							<%= f.text_field :title, autofocus: true, value: 'Title', class: 'form-control' %>
-						</div>
-						<%= f.submit "Add!", class: 'btn btn-primary' %>
-					<% end %>
-      			</div>
+      			<!-- <div class="card-block text-xs-center"> -->
+      				<ul class="list-group list-group-flush text-xs-center" id="appearances">
+      					<%= render @appearances %>
+      				</ul>
+      			<!-- </div> -->
       		</div>
       	</div>
 	</div>

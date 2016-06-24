@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'font-awesome-rails'
 gem 'redis', '~> 3.2'
 
 # Use jquery as the JavaScript library
