@@ -1,11 +1,7 @@
 <div class="container">
 	<div class="row">
-		<!-- <div class="header text-xs-center">
-			<h1>ACTION CHATS</h1>
-		</div> -->
-		
 		<% flash.each do |key, value| %>
-        	<div class="alert alert-<%= key %>"><%= value %></div>
+        	<div class="alert alert-success"><%= value %></div>
       	<% end %>
 
       	<div class="col-md-8">
@@ -14,9 +10,7 @@
       				<h3>CHAT ROOMS</h3>
       			</div>
       			<div class="list-group list-group-flush">
-      				<!-- <ul class="list-group list-group-flush"> -->
-      					<%= render @chat_rooms %>			
-      				<!-- </ul> -->
+      				<%= render @chat_rooms %>
       			</div>
       		</div>
       	</div>
@@ -28,30 +22,12 @@
       			<div class="card-block text-xs-left">
       				<%= form_for @chat_room, url: {controller: "chat_rooms", action: "create"} do |f| %>
 						<div class="form-group">
-							<%= f.text_field :title, autofocus: true, value: 'Title', class: 'form-control' %>
+							<%= f.text_field :title, autofocus: true, placeholder: 'Title', class: 'form-control' %>
 						</div>
 						<%= f.submit "Add!", class: 'btn btn-primary' %>
 					<% end %>
       			</div>
       		</div>
       	</div>
-
-
-		<!-- <p class="lead"><%= link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p> -->
-
-		<!-- <ul>
-			<%= render @chat_rooms %>
-		</ul> -->
-
-		<!-- <h1>Add chat room</h1>
-
-		<%= form_for @chat_room, url: {controller: "chat_rooms", action: "create"} do |f| %>
-			<div class="form-group">
-				<%= f.label :title %>
-				<%= f.text_field :title, autofocus: true, class: 'form-control' %>
-			</div>
-
-			<%= f.submit "Add!", class: 'btn btn-primary' %>
-		<% end %> -->
 	</div>
 </div>
